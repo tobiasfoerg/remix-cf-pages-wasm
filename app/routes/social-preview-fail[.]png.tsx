@@ -1,0 +1,25 @@
+import { initWasm, Resvg } from "@resvg/resvg-wasm";
+import wasmBinary from "@resvg/resvg-wasm/index_bg.wasm";
+import satori from "satori";
+import { getFont } from "~/misc";
+
+export async function loader() {
+	await initWasm(wasmBinary);
+	const svg = await satori(<div>test</div>, {
+		width: 1200,
+		height: 630,
+		fonts: await getFont("Inter"),
+	});
+
+	const resvg = new Resvg(svg);
+	const pngData = resvg.render();
+	const data = pngData.asPng();
+
+	return new Response(data, {
+		headers: {
+			"Content-Type": "image/png",
+		},
+	});
+}
+
+

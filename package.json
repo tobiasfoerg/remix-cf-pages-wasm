@@ -1,0 +1,36 @@
+{
+  "name": "remix-cf-pages-wasm",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "build": "remix build",
+    "dev": "remix dev --manual -c \"npm run start\"",
+    "start": "wrangler pages dev --compatibility-date=2023-06-21 ./public",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@remix-run/cloudflare": "0.0.0-nightly-bfa2bbc-20231115",
+    "@remix-run/cloudflare-pages": "0.0.0-nightly-bfa2bbc-20231115",
+    "@remix-run/css-bundle": "0.0.0-nightly-bfa2bbc-20231115",
+    "@remix-run/react": "0.0.0-nightly-bfa2bbc-20231115",
+    "@resvg/resvg-wasm": "^2.6.0",
+    "isbot": "^3.6.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "satori": "^0.10.9"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20230518.0",
+    "@remix-run/dev": "0.0.0-nightly-bfa2bbc-20231115",
+    "@remix-run/eslint-config": "0.0.0-nightly-bfa2bbc-20231115",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
+    "eslint": "^8.38.0",
+    "typescript": "^5.1.0",
+    "wrangler": "^3.1.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
