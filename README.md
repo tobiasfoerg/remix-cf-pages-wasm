@@ -13,7 +13,7 @@ pnpm install && pnpm dev
 
 ## `/social-preview.png`
 
-To make wasm work i had to exclude `@resvg\/resvg-wasm` from serverDependenciesToBundle in remix.config.js
+To make wasm work i had to exclude `@resvg/resvg-wasm` from serverDependenciesToBundle in remix.config.js
 ```js
 /** @type {import('@remix-run/dev').AppConfig} */
 export default {
@@ -42,7 +42,7 @@ import wasmBinary from "@resvg/resvg-wasm/index_bg.wasm";
 export async function onRequest(context) {
 	try {
 		const url = new URL(context.request.url);
-        // init wasm for the social-preview.png route only
+        	// init wasm for the social-preview.png route only
 		if (url.pathname === "/social-preview.png") {
 			await initWasm(wasmBinary);
 		}
