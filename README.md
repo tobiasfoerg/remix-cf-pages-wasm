@@ -22,6 +22,7 @@ export default {
 	serverBuildPath: "functions/[[path]].js",
 	serverConditions: ["workerd", "worker", "browser"],
 	serverDependenciesToBundle: [
+		// all except @resvg/resvg-wasm
         	/^(?!@resvg\/resvg-wasm$).*/,
     	],
 	serverMainFields: ["browser", "module", "main"],
