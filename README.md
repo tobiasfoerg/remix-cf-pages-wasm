@@ -126,7 +126,8 @@ TypeError: Fetch API cannot load: /build/_assets/index_bg-FX7W6XMT.wasm
     at async Object.queryRoute (file:///home/tfoerg/github/tobiasfoerg/remix-cf-pages-wasm/.wrangler/tmp/dev-RHmAo5/av75sfdu7h9.js:2731:18)
 ```
 
-I tried excluding the wasm from bundling but that didn't help.  
+I tried excluding the wasm from bundling but that didn't help or i failed with the regex.  
+
 Snippet from `/functions/[[...path]].js`
 ```js
 import { initWasm, Resvg } from "@resvg/resvg-wasm";
